@@ -1,40 +1,66 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Cpu } from 'lucide-react';
 
-const techs = [
-  { name: 'React', icon: '⚛️' },
-  { name: 'Next.js', icon: '▲' },
-  { name: 'TypeScript', icon: 'TS' },
-  { name: 'Tailwind', icon: '🌊' },
-  { name: 'Framer Motion', icon: '✨' },
-  { name: 'Node.js', icon: '🟢' },
-  { name: 'GraphQL', icon: '🔮' },
-  { name: 'PostgreSQL', icon: '🐘' },
+const techCategories = [
+  {
+    title: 'Frontend',
+    items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS']
+  },
+  {
+    title: 'Backend',
+    items: ['Node.js', 'Python', 'Go', 'GraphQL']
+  },
+  {
+    title: 'Database',
+    items: ['PostgreSQL', 'MongoDB', 'Redis', 'Elasticsearch']
+  },
+  {
+    title: 'Cloud & DevOps',
+    items: ['AWS', 'Docker', 'Kubernetes', 'CI/CD']
+  }
 ];
 
 export const TechStack = () => {
   return (
-    <section className="py-24 bg-navy-950/30">
+    <section className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">The Engines of Innovation</h2>
-          <p className="text-white/50">We use the most advanced technologies to build your digital future.</p>
+        <div className="text-center mb-20 max-w-2xl mx-auto">
+          <div className="inline-flex items-center gap-2 text-primary font-bold tracking-widest uppercase text-sm mb-6">
+            <Cpu className="w-4 h-4" />
+            Modern Tech Stack
+          </div>
+          <h2 className="text-4xl md:text-6xl font-extrabold mb-8 tracking-tight text-white leading-tight">
+            The Engines of <span className="text-slate-500">Innovation</span>
+          </h2>
+          <p className="text-slate-400 text-lg leading-relaxed">
+            We leverage a world-class technology ecosystem to build secure, high-performance, and future-ready digital solutions.
+          </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {techs.map((tech, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {techCategories.map((category, i) => (
             <motion.div
-              key={tech.name}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              key={category.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="flex flex-col items-center gap-4 group cursor-default"
+              className="p-8 rounded-[2rem] bg-slate-900/40 border border-white/5 hover:border-primary/20 hover:bg-slate-900/60 transition-all duration-500 group"
             >
-              <div className="w-20 h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl group-hover:bg-primary/20 group-hover:border-primary/40 transition-all duration-300 shadow-[0_0_20px_transparent] group-hover:shadow-[0_0_30px_rgba(22,119,255,0.2)]">
-                {tech.icon}
+              <h3 className="text-lg font-bold text-white mb-6 tracking-tight group-hover:text-primary transition-colors">
+                {category.title}
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {category.items.map((tech) => (
+                  <span 
+                    key={tech} 
+                    className="px-4 py-2 rounded-xl bg-white/5 border border-white/5 text-slate-400 text-xs font-bold tracking-wider group-hover:border-primary/10 transition-all"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
-              <span className="text-white/60 font-medium group-hover:text-primary-glow transition-colors">{tech.name}</span>
             </motion.div>
           ))}
         </div>
