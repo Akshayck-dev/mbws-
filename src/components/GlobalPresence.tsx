@@ -5,19 +5,19 @@ import { MapPin, Globe, Phone, Mail } from 'lucide-react';
 const locations = [
   {
     city: "Kochi, India",
-    address: "Infopark Campus, Kakkanad, Kochi, Kerala",
+    address: "Infopark Campus, Kakkanad, Kerala",
     phone: "+91 484 405 2626",
     email: "india@webapporbis.com"
   },
   {
     city: "Dubai, UAE",
-    address: "Business Bay, Downtown Dubai, UAE",
+    address: "Business Bay, Downtown Dubai",
     phone: "+971 4 554 0033",
     email: "uae@webapporbis.com"
   },
   {
     city: "London, UK",
-    address: "Canary Wharf, London, United Kingdom",
+    address: "Canary Wharf, United Kingdom",
     phone: "+44 20 7946 0000",
     email: "uk@webapporbis.com"
   },
@@ -31,89 +31,51 @@ const locations = [
 
 export const GlobalPresence = () => {
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
-      {/* Abstract World Map Background */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="w-full h-full bg-[url('https://www.transparenttextures.com/patterns/world-map.png')] bg-center bg-no-repeat bg-contain" />
-      </div>
-
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
-          <div className="lg:w-1/2">
-            <motion.span 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="text-primary-glow font-bold tracking-widest uppercase text-sm"
-            >
-              Global Reach
-            </motion.span>
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl font-black mt-4 text-white tracking-tighter"
-            >
-              Serving Clients <br />
-              <span className="text-primary">Across the Globe</span>
-            </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-white/60 mt-6 text-lg leading-relaxed max-w-xl"
-            >
-              With strategic offices across multiple continents, we provide localized support and global-standard digital solutions to businesses worldwide.
-            </motion.p>
-
-            <div className="mt-12 grid grid-cols-2 gap-8">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary-glow">
-                   <Globe className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="text-white font-bold">5+ Countries</h4>
-                  <p className="text-white/40 text-sm">Physical Presence</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary-glow">
-                   <MapPin className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="text-white font-bold">500+ Projects</h4>
-                  <p className="text-white/40 text-sm">Delivered Worldwide</p>
-                </div>
-              </div>
+    <section className="py-24 relative overflow-hidden bg-slate-950/20">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col lg:flex-row items-end justify-between mb-16 gap-8">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-2 text-primary font-bold tracking-widest uppercase text-sm mb-4">
+              <Globe className="w-4 h-4" />
+              Global Infrastructure
             </div>
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
+              Operational Hubs <br />
+              <span className="text-slate-500">Worldwide</span>
+            </h2>
           </div>
+          <p className="text-slate-400 text-lg leading-relaxed max-w-sm lg:mb-2">
+            Our strategic global presence allows us to deliver high-performance digital solutions with localized expertise.
+          </p>
+        </div>
 
-          <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-            {locations.map((loc, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 hover:bg-white/10 transition-all group"
-              >
-                <h3 className="text-lg font-bold text-white mb-4 group-hover:text-primary-glow transition-colors">{loc.city}</h3>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3 text-white/50 text-sm">
-                    <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
-                    <span>{loc.address}</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-white/50 text-sm">
-                    <Phone className="w-4 h-4 flex-shrink-0" />
-                    <span>{loc.phone}</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-white/50 text-sm">
-                    <Mail className="w-4 h-4 flex-shrink-0" />
-                    <span>{loc.email}</span>
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {locations.map((loc, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 hover:border-primary/20 hover:bg-slate-900/60 transition-all duration-500 group"
+            >
+              <h3 className="text-xl font-bold text-white mb-6 group-hover:text-primary transition-colors tracking-tight">{loc.city}</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3 text-slate-500 text-sm leading-relaxed">
+                  <MapPin className="w-4 h-4 mt-1 shrink-0 text-primary/50" />
+                  <span>{loc.address}</span>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+                <div className="flex items-center gap-3 text-slate-500 text-sm">
+                  <Phone className="w-4 h-4 shrink-0 text-primary/50" />
+                  <span>{loc.phone}</span>
+                </div>
+                <div className="flex items-center gap-3 text-slate-500 text-sm">
+                  <Mail className="w-4 h-4 shrink-0 text-primary/50" />
+                  <span className="truncate">{loc.email}</span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

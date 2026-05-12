@@ -22,7 +22,7 @@ const awards = [
     year: "2023"
   },
   {
-    title: "Best Mobile App Solutions",
+    title: "Best Mobile Solutions",
     organization: "Mobile App Daily",
     icon: Medal,
     year: "2021"
@@ -31,51 +31,42 @@ const awards = [
 
 export const Awards = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-navy-950">
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <motion.span 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-primary-glow font-bold tracking-widest uppercase text-sm"
-          >
-            Recognition
-          </motion.span>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-black mt-4 text-white tracking-tighter"
-          >
-            Awards & <span className="text-primary">Recognition</span>
-          </motion.h2>
+    <section className="py-24 relative overflow-hidden">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col lg:flex-row items-end justify-between mb-16 gap-8">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-2 text-primary font-bold tracking-widest uppercase text-sm mb-4">
+              <Trophy className="w-4 h-4" />
+              Excellence Recognized
+            </div>
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
+              Awards & Global <br />
+              <span className="text-slate-500">Recognition</span>
+            </h2>
+          </div>
+          <p className="text-slate-400 text-lg leading-relaxed max-w-sm lg:mb-2">
+            Our commitment to engineering excellence has been recognized by leading industry authorities worldwide.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {awards.map((award, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-300 relative overflow-hidden text-center"
+              viewport={{ once: true }}
+              className="p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/5 hover:border-primary/20 hover:bg-slate-900/60 transition-all duration-500 group text-center"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <award.icon className="w-8 h-8 text-primary-glow" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">{award.title}</h3>
-                <p className="text-white/60 text-sm mb-4">{award.organization}</p>
-                <span className="inline-block px-3 py-1 bg-primary/20 text-primary-glow rounded-full text-xs font-bold">
-                  {award.year}
-                </span>
+              <div className="w-14 h-14 mx-auto mb-6 rounded-2xl bg-white/5 flex items-center justify-center group-hover:scale-110 group-hover:bg-primary/10 group-hover:border-primary/20 transition-all duration-500">
+                <award.icon className="w-7 h-7 text-slate-400 group-hover:text-primary transition-colors" />
               </div>
-
-              {/* Decorative elements */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors" />
+              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors tracking-tight">{award.title}</h3>
+              <p className="text-slate-500 text-sm mb-6 font-medium">{award.organization}</p>
+              <span className="px-3 py-1 rounded-md bg-white/5 text-[10px] font-black text-slate-500 uppercase tracking-widest border border-white/5 group-hover:border-primary/20 group-hover:text-primary transition-all">
+                Class of {award.year}
+              </span>
             </motion.div>
           ))}
         </div>
