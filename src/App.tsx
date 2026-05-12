@@ -15,8 +15,10 @@ import { ProcessTimeline } from './components/ProcessTimeline';
 import { FAQ } from './components/FAQ';
 import { Clients } from './components/Clients';
 import { Industries } from './components/Industries';
+import { Awards } from './components/Awards';
+import { GlobalPresence } from './components/GlobalPresence';
+import { FloatingContact } from './components/FloatingContact';
 
-// Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -24,13 +26,13 @@ const ScrollToTop = () => {
   }, [pathname]);
   return null;
 };
-
 // Layout Wrapper
 const Layout = ({ children }: { children: React.ReactNode }) => (
   <div className="relative min-h-screen">
     <OrbitBackground />
     <Navbar />
     <main className="relative z-10">{children}</main>
+    <FloatingContact />
     <Footer />
   </div>
 );
@@ -43,10 +45,12 @@ const Home = () => (
     <WhyChooseUs />
     <ServicesBento />
     <Projects />
+    <Testimonials />
+    <Awards />
     <Industries />
+    <GlobalPresence />
     <ProcessTimeline />
     <TechStack />
-    <Testimonials />
     <FAQ />
     {/* CTA Section */}
     <section className="py-24 relative overflow-hidden">
