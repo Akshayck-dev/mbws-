@@ -27,6 +27,7 @@ export default {
         'orbit-reverse': 'orbit 25s linear infinite reverse',
         'pulse-glow': 'pulse-glow 4s ease-in-out infinite',
         'float': 'float 6s ease-in-out infinite',
+        'spin-slow': 'spin 15s linear infinite',
       },
       keyframes: {
         orbit: {
