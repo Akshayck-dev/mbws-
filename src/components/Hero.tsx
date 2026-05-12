@@ -63,7 +63,7 @@ export const Hero = () => {
         {/* Orbit Visual */}
         <div className="relative mt-24 flex justify-center">
           <div className="relative w-64 h-64 md:w-96 md:h-96">
-            {/* Center Logo Placeholder */}
+            {/* Center Logo Placeholder - Stylized W from Logo */}
             <motion.div 
               animate={{ 
                 scale: [1, 1.05, 1],
@@ -72,10 +72,14 @@ export const Hero = () => {
               transition={{ duration: 8, repeat: Infinity }}
               className="absolute inset-0 flex items-center justify-center z-20"
             >
-              <div className="w-32 h-32 md:w-48 md:h-48 rounded-full bg-gradient-to-tr from-primary to-primary-glow p-[1px]">
-                <div className="w-full h-full rounded-full bg-background flex items-center justify-center shadow-[0_0_50px_rgba(22,119,255,0.3)]">
-                  <Globe className="w-16 h-16 md:w-24 md:h-24 text-primary-glow" />
+              <div className="relative w-32 h-32 md:w-48 md:h-48 flex items-center justify-center">
+                {/* Stylized W */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary to-primary-glow rounded-full blur-2xl opacity-20 animate-pulse-glow" />
+                <div className="relative z-10 text-8xl md:text-[12rem] font-black italic tracking-tighter select-none">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-br from-primary via-primary-glow to-primary-glow drop-shadow-[0_0_30px_rgba(0,119,255,0.5)]">W</span>
                 </div>
+                {/* Logo Ring */}
+                <div className="absolute inset-0 border-2 border-primary/30 rounded-full scale-110 -rotate-12 animate-orbit" style={{ animationDuration: '4s' }} />
               </div>
             </motion.div>
 

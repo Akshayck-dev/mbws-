@@ -7,19 +7,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#050816",
+        background: "#000814", // Deeper, almost black navy for high contrast
         primary: {
-          DEFAULT: "#1677FF",
-          glow: "#3BA9FF",
+          DEFAULT: "#0077FF", // The core blue from the logo
+          glow: "#4DC2FF", // The bright highlight from the logo
         },
         accent: {
-          blue: "#1677FF",
-          glow: "#3BA9FF",
+          blue: "#0055FF",
+          glow: "#80D4FF",
         },
         navy: {
-          950: "#050816",
-          900: "#0A0F2D",
-          800: "#121A4A",
+          950: "#000814",
+          900: "#001A33", // Dark navy from the logo text
+          800: "#002B55",
         }
       },
       animation: {
@@ -45,6 +45,7 @@ export default {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
+        'logo-gradient': 'linear-gradient(to right, #0077FF, #00D4FF)',
       }
     },
   },

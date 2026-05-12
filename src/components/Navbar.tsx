@@ -40,9 +40,12 @@ export const Navbar = () => {
               transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
               className="absolute inset-0 border-2 border-dashed border-primary-glow/50 rounded-full"
             />
-            <Globe className="w-6 h-6 text-primary-glow group-hover:scale-110 transition-transform" />
+            <div className="relative z-10 font-black italic text-xl text-primary-glow">W</div>
           </div>
-          <span className="text-xl font-bold tracking-tight glow-text">WebApp Orbis</span>
+          <div className="flex flex-col md:flex-row md:items-center md:gap-1">
+            <span className="text-xl font-black tracking-tighter text-white">WebApp</span>
+            <span className="text-xl font-black tracking-tighter text-primary-glow">Orbis</span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}

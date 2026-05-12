@@ -88,8 +88,9 @@ export const ServicesBento = () => {
                 </p>
               </div>
 
-              {/* Decorative Lines */}
-              <div className="absolute -bottom-10 -right-10 w-32 h-32 border border-white/5 rounded-full group-hover:scale-150 transition-transform duration-700" />
+              {/* Decorative Orbit Ring */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 border border-primary/5 rounded-full group-hover:border-primary/20 transition-colors duration-700 pointer-events-none" />
+              <div className="absolute -top-5 -right-5 w-20 h-20 border border-primary/5 rounded-full group-hover:border-primary/20 transition-colors duration-700 pointer-events-none delay-100" />
             </motion.div>
           ))}
         </div>
