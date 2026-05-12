@@ -3,31 +3,34 @@
 
 @layer base {
   body {
-    @apply bg-background text-white selection:bg-primary/30 selection:text-primary-glow overflow-x-hidden;
-    font-family: 'Inter', sans-serif;
+    @apply bg-background text-white selection:bg-primary/30 selection:text-white overflow-x-hidden;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl transition-all duration-300;
+    @apply bg-slate-900/40 backdrop-blur-xl border border-white/5 rounded-[2rem] transition-all duration-500;
   }
   
   .glass-card:hover {
-    @apply bg-white/10 border-white/20;
+    @apply bg-slate-900/60 border-primary/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)];
   }
 
   .glow-text {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-white via-primary-glow to-primary;
-    text-shadow: 0 0 30px rgba(59, 169, 255, 0.3);
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-primary;
   }
 
   .btn-primary {
-    @apply px-8 py-3 bg-primary hover:bg-primary-glow text-white rounded-full font-medium transition-all duration-300 shadow-[0_0_20px_rgba(22,119,255,0.4)] hover:shadow-[0_0_30px_rgba(59,169,255,0.6)] active:scale-95;
+    @apply px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-full font-bold transition-all duration-300 shadow-[0_10px_25px_rgba(37,99,235,0.25)] hover:shadow-[0_15px_35px_rgba(37,99,235,0.35)] active:scale-95;
   }
 
   .btn-outline {
-    @apply px-8 py-3 bg-white/5 border border-white/10 hover:bg-white/10 text-white rounded-full font-medium transition-all duration-300 active:scale-95;
+    @apply px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 text-white rounded-full font-bold transition-all duration-300 active:scale-95;
   }
 }
 
@@ -41,7 +44,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
 }
 
 /* Lenis Smooth Scroll */
@@ -65,32 +68,20 @@ html.lenis {
   pointer-events: none;
 }
 
-/* Orbit Lines Background */
-.orbit-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
+/* Orbit Background Styling */
 .orbit-line {
   position: absolute;
   top: 50%;
   left: 50%;
-  border: 1px solid rgba(59, 169, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.03);
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
 
 .glow-spot {
   position: absolute;
-  background: radial-gradient(circle, rgba(22, 119, 255, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(60px);
+  filter: blur(80px);
 }

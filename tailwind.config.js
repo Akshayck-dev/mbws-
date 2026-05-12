@@ -7,20 +7,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#000814", // Deeper, almost black navy for high contrast
+        background: "#020617", // Slate-950
         primary: {
-          DEFAULT: "#0077FF", // The core blue from the logo
-          glow: "#4DC2FF", // The bright highlight from the logo
-        },
-        accent: {
-          blue: "#0055FF",
-          glow: "#80D4FF",
+          DEFAULT: "#2563EB", // Blue-600
+          glow: "#60A5FA", // Blue-400
         },
         navy: {
-          950: "#000814",
-          900: "#001A33", // Dark navy from the logo text
-          800: "#002B55",
+          950: "#020617",
+          900: "#0F172A", // Slate-900
+          800: "#1E293B", // Slate-800
+          700: "#334155", // Slate-700
+        },
+        slate: {
+          400: "#94A3B8",
+          500: "#64748B",
+          600: "#475569",
         }
+      },
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
       },
       animation: {
         'orbit': 'orbit 20s linear infinite',

@@ -55,15 +55,22 @@ const Home = () => (
     {/* CTA Section */}
     <section className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="glass-card p-12 md:p-24 text-center relative overflow-hidden group">
-          <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-          <h2 className="text-4xl md:text-6xl font-black mb-8 relative z-10">Ready to Launch Your <br /> <span className="glow-text">Digital Vision?</span></h2>
-          <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-12 relative z-10">
-            Join the orbit of world-class brands. Let's engineer something extraordinary together.
+        <div className="bg-gradient-to-br from-primary/10 to-transparent p-12 md:p-24 rounded-[3rem] border border-white/5 text-center relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
+          <h2 className="text-4xl md:text-7xl font-extrabold mb-8 relative z-10 tracking-tight text-white">
+            Ready to <span className="text-primary">Scale Your Business?</span>
+          </h2>
+          <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 relative z-10 leading-relaxed">
+            Let's discuss how our technical expertise can help you achieve your business objectives and drive sustainable growth.
           </p>
-          <button className="btn-primary scale-110 relative z-10">
-            Get Started Now
-          </button>
+          <div className="flex flex-col sm:flex-row justify-center gap-6 relative z-10">
+            <button className="px-10 py-5 rounded-full bg-primary text-white font-bold text-lg hover:bg-primary/90 transition-all shadow-[0_10px_30px_rgba(37,99,235,0.3)]">
+              Schedule a Consultation
+            </button>
+            <button className="px-10 py-5 rounded-full bg-white/5 text-white font-bold text-lg border border-white/10 hover:bg-white/10 transition-all">
+              Contact Sales
+            </button>
+          </div>
         </div>
       </div>
     </section>
